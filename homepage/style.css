@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Ubuntu&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+*::selection{
+    color:#95C11E;
+    background-color: white;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    /* perspective: 800px; */
+}
+
+body::-webkit-scrollbar{
+    display:block;
+    width: 7px;
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #95C11E;
+    border-radius: 7px;
+    
+}
+
+@keyframes scroll {
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#nav{
+    height:130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 120px;
+    gap: 50px;
+    /* puri website m nav hamare sath chal rha h isliye */
+    position: fixed;
+    /* when position of video become fixed the navbar will be goes back to video we need to put navbar to z axis to do this we use z-index */
+    z-index: 99;
+}
+#nav h4{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#nav h4 a{
+    text-decoration: none;
+}
+
+#nav img{
+    height: 4.5vw;
+}
+
+video{
+    /* we do this becouse video size is too large this will make video size in square*/
+    width: 100%;
+    height: 100%;
+    /* some white space left in corner to eliminate this we need to use object fit */
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+#main{
+    position: relative;
+    background-color: rgb(0, 0, 0,0.37);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size:140px;
+    font-weight:900;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    top: -4px;
+    color: #000;
+    left: -4px;
+    -webkit-text-stroke: 1px #95C11E;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+    z-index: 10;
+}
+
+#page2{
+    height: 50vh;
+    width: 100%;
+    z-index:10;
+}
+
+#cursor{
+    height: 20px;
+    width: 25px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursorbloor{
+    height: 500px;
+    width: 500px;
+    background-color: #96c11e29;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+}
+
+#scroller{
+    white-space:nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    color: transparent;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin-right: 60px;
+  -webkit-text-stroke: 2px #fff;
+  transition: all linear 0.5;
+  color: transparent;
+  
+
+
+}
+
+#scroller h4:hover{
+    color:#95c11e;
+    -webkit-text-stroke: #95c11e;
+}
+
+#scroller1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name:scroll;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller2{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name:scroll;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#page3{
+    display: flex;
+    height: 40vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px ;
+    position: relative;
+    z-index: 10;
+}
+ 
+#page3 img{
+    height: 220px;
+    width: 220px;
+    border-radius: 11px;
+    object-fit: cover;
+  
+}
+
+#about{
+    width: 50%;
+    text-align: center;
+}
+
+#about h3{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+#about p{
+    font-size: 20px;
+    font-weight: lighter;
+    line-height: 26px;
+}
+
+#cardgroup{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    
+}
+
+.cards{
+    background-color: blue;
+    height: 80%;
+    width: 24%;
+    border-radius: 17px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-768x512.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+#card2{
+background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-768x768.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+#card3{
+background-image: url('https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-768x511.jpg?strip=all&lossy=1&sharp=1&ssl=1');
+}
+
+.overlay{
+    background-color: #95C11E;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 120px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.cards:hover .overlay{
+    opacity: 1;
+}
+.overlay h4{
+    font-size: 35px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+
+.cards:hover{
+    transform:rotate3d(-1,1,0,20deg);
+}
+
+#greenpage{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #069D3C,#B2E724);
+}
+
+#greenpage h4{
+    width: 45%;
+    line-height: 50px;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    font-size: 27px;
+    text-transform: uppercase;
+}
+#greenpage img{
+    height: 100%;
+    object-fit: cover;
+    width: 12%;
+}
+
+#page4{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #000;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+} 
+#page4>p{
+    font-size: 22px;
+    font-weight: 700;
+    width: 60%;
+   line-height:45px;
+   text-align:center;
+   text-transform: uppercase;
+}
+
+#page4 img{
+    height: 60px;
+    position: absolute;
+}
+
+#page4 #quote1{
+    left: 15%;
+    top: 25%;
+}
+
+
+#page4 #quote2{
+    bottom:35%;
+    right: 15%;
+    
+    
+}   
+#page5{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    
+}
+
+.element{
+    height: 70%;
+    width: 27%;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+   
+}
+
+.element img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+.element:hover img{
+    scale: 1;
+}
+
+.element:hover h2{
+    color: white;
+    background: transparent;  
+    -webkit-text-stroke:0px;
+    background:rgba(0, 0, 0, 0.103);
+    transition: all ease 0.7s;
+}
+
+.element h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px black;
+    position: absolute;
+    z-index: 10;
+}
+
+#page5 h4{
+    font-size: 70px;
+    position: absolute;
+   top: -12%;
+   font-weight: 900;
+   -webkit-text-stroke: 1px white;
+   color: transparent;
+}
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom,#069D3D,#B1E623);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    padding: 0 100px;
+}
+
+#footer img{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index:99;
+}
+
+#f1 img{
+    height: 90px;
+
+}
+
+#f1,#f2,#f3,#f4{
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+}
+
+#f2 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+#f3 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+ #f4 p{
+    font-size: 18px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+
+ }
